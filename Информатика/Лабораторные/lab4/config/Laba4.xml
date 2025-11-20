@@ -1,0 +1,72 @@
+<config>
+  <even_week>True</even_week>
+  <day_id>2</day_id>
+  <date>27 October 2025</date>
+  <group>P3112</group>
+  <schedule>
+    <entry>
+      <title>Основы дискретной математики</title>
+      <format>Очный</format>
+      <type>
+        <title>Лекция</title>
+      </type>
+      <building>
+        <address>Кронверкский пр., д.49, лит.А</address>
+      </building>
+      <time>
+        <start_time>09:50</start_time>
+        <finish_time>11:20</finish_time>
+      </time>
+      <class_number>2337</class_number>
+      <teacher_name>Поляков Владимир Иванович</teacher_name>
+    </entry>
+    <entry>
+      <title>Основы дискретной математики</title>
+      <format>Очно - дистанционный</format>
+      <type>
+        <title>Практика</title>
+      </type>
+      <building>
+        <address>Кронверкский пр., д.49, лит.А</address>
+      </building>
+      <time>
+        <start_time>11:30</start_time>
+        <finish_time>13:00</finish_time>
+      </time>
+      <class_number>2337</class_number>
+      <teacher_name>Поляков Владимир Иванович</teacher_name>
+    </entry>
+    <entry>
+      <title>ОПД</title>
+      <format>Очный</format>
+      <type>
+        <title>Лабораторная</title>
+      </type>
+      <building>
+        <address>Кронверкский пр., д.49, лит.А</address>
+      </building>
+      <time>
+        <start_time>13:30</start_time>
+        <finish_time>15:00</finish_time>
+      </time>
+      <class_number>1333</class_number>
+      <teacher_name>Деменев Тимур Гурбанович</teacher_name>
+    </entry>
+    <entry>
+      <title>ОПД</title>
+      <format>Очный</format>
+      <type>
+        <title>Лабораторная</title>
+      </type>
+      <building>
+        <address>Кронверкский пр., д.49, лит.А</address>
+      </building>
+      <time>
+        <start_time>15:30</start_time>
+        <finish_time>17:00</finish_time>
+      </time>
+      <class_number>1333</class_number>
+      <teacher_name>Деменев Тимур Гурбанович</teacher_name>
+    </entry>
+  </schedule>
+</config>

@@ -1,0 +1,50 @@
+even_week: True
+day_id: 2
+date: 27 October 2025
+group: P3112
+schedule:
+  - title: Основы дискретной математики
+    format: Очный
+    type:
+      title: Лекция
+    building:
+      address: Кронверкский пр., д.49, лит.А
+    time:
+      start_time: 09:50
+      finish_time: 11:20
+    class_number: 2337
+    teacher_name: Поляков Владимир Иванович
+  - title: Основы дискретной математики
+    format: Очно - дистанционный
+    type:
+      title: Практика
+    building:
+      address: Кронверкский пр., д.49, лит.А
+    time:
+      start_time: 11:30
+      finish_time: 13:00
+    class_number: 2337
+    teacher_name: Поляков Владимир Иванович
+  - title: ОПД
+    format: Очный
+    type:
+      title: Лабораторная
+    building:
+      address: Кронверкский пр., д.49, лит.А
+    time:
+      start_time: 13:30
+      finish_time: 15:00
+    class_number: 1333
+    teacher_name: Деменев Тимур Гурбанович
+  - title: ОПД
+    format: Очный
+    type:
+      title: Лабораторная
+    building:
+      address: Кронверкский пр., д.49, лит.А
+    time:
+      start_time: 15:30
+      finish_time: 17:00
+    class_number: 1333
+    teacher_name: Деменев Тимур Гурбанович
+

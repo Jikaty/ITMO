@@ -1,0 +1,144 @@
+@startuml
+interface MoneyChecker {
+~ void checkMoney(Entity,Entity)
+}
+
+class Bed {
+- int pillowCost
+- int blanketCost
+- int bedsheetCost
+- BedThings res
+- {static} String smtThatWeCantBuy
+- List<Integer> rand
++ int getBedTotalCost()
+# String successBuy()
+# String successBuy2()
+# String unSuccessBuy()
+# String haveEnoughMoney()
+- int getRandomNumberWithoutRepeat()
++ void fullBed(Entity,Entity)
+- void sleepWithoutTv()
++ void tvOrSleep(Entity,Entity,TV)
++ String toString()
+}
+
+
+enum Numbers {
++  ONE
++  TWO
++  THREE
+- String word
++ String getWord()
++ {static} Numbers getRandomNumber(int)
+}
+
+
+class HowHaventMoney {
+- int lackOfMoney
++ int lackOfMoney()
+}
+
+
+class StartStory {
++ void startStory(Entity,Entity,TV,Bed,ScrapMetal)
+}
+
+class TV {
+# String successBuy()
+# String successBuy2()
+# String unSuccessBuy()
+- void casinoTV(Entity,Entity)
+- boolean turnOn()
+- void tvSay()
++ void useTv(Entity,Entity)
++ String toString()
++ boolean equals(Object)
++ int hashCode()
+}
+
+enum BedThings {
++  PILLOW
++  BLANKET
++  BEDSHEET
+- String description
+- String secondDescription
+~ int NumberOfDescriptions
++ String getDescription()
++ String getSecondDescription()
++ {static} BedThings getRandomNumber(int)
++ {static} int getDescriptionOfNumbers(String)
+}
+
+
+class Entity {
+- String name
+- int money
+- int moneyForCountMoney
++ String getName()
++ void setName(String)
++ int getMoney()
++ void setMoney(int)
+- void outOfMoneyCount(int,int)
++ void countMoney()
++ String toString()
++ boolean equals(Object)
++ int hashCode()
+}
+
+
+class NotEnoughMoneyException {
+- HowHaventMoney howHaventMoney
++ HowHaventMoney getLackOfMoney()
++ String getMessage()
+}
+
+
+class ScrapMetal {
+- int weight
++ void checkMoney(Entity,Entity)
+- void collectScrap(Entity,Entity)
+- int randScrapWeight(int)
++ String toString()
+}
+
+
+abstract class Stuff {
+- String name
+- int cost
+- {static} int lackOfMoney
+- {static} boolean stopFlag
++ String getName()
++ void setName(String)
++ int getCost()
++ void setCost(int)
++ int getLackOfMoney()
++ boolean getStopFlag()
++ void setStopFlag(boolean)
+# String successBuy()
+# String successBuy2()
+# String unSuccessBuy()
+# String haventEnoughMoney()
+# String haveEnoughMoney()
++ void checkMoney(Entity,Entity)
+- void attemptPurchase(Entity,Entity,int,int)
+- void twoGuysPay(Entity,Entity,int,int)
+- void brokeGuys(Entity,Entity,int)
+}
+
+
+class Main {
++ {static} void main(String[])
+}
+
+
+
+Stuff <|-- Bed
+Stuff <|-- TV
+RuntimeException <|-- NotEnoughMoneyException
+Stuff <|-- ScrapMetal
+MoneyChecker <|.. Stuff
+Bed <|.. BedThings
+Entity <|.. Numbers
+Stuff <|.. HowHaventMoney
+
+@enduml

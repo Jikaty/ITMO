@@ -1,0 +1,83 @@
+@startuml
+class Ticket {
+  -id: int
+  -name: String
+  -coordinates: Coordinates
+  -creationDate: ZonedDateTime
+  -price: Long
+  -type: TicketType
+  -person: Person
+
+}
+
+class Coordinates {
+  -x: Float
+  -y: double
+
+}
+
+class Person {
+  -birthday: Date
+  -height: double
+  -weight: int
+  -passportID: String
+
+}
+interface Command{
++executeCommand
++describeCommand
++getName
+}
+class ScriptAndPeapleScanner{
++ScanFromConsole
++ScanFromFile
+}
+
+enum TicketType {
+  VIP
+  USUAL
+  BUDGETARY
+  CHEAP
+}
+
+
+class CommandManager {
+ - collection: LinkedHashMap<String,Command>
+ -registerCmd(Command cmd)
+ +getCommandKey()
+ +getName(String name)
+}
+
+class Main {
+  +main(args)
+}
+
+class TicketManager{
+-Map<Integer, Ticket>
++ticketRegister(int key,Ticket ticket)
++getInitTime()
++getCollectionSize()
++getCollectionHashCode()
+}
+
+
+
+object xml{
+data
+}
+class OneOfCommand implements Command{
+}
+
+CommandManager --> OneOfCommand
+CommandManager --> ScriptAndPeapleScanner
+Main --> CommandManager
+Ticket --> Coordinates
+Ticket --> Person
+Ticket --> TicketType
+TicketManager --> Ticket
+TicketManager --> xml
+
+
+
+
+@enduml

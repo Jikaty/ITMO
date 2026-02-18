@@ -7,6 +7,7 @@ import java.util.*;
 public class CommandManager {
 	private final Map<String, Command> commands = new LinkedHashMap<>();
 
+
 	public CommandManager() {
 		registerCmd(new InfoCommand());
 		registerCmd(new HelpCommand(this));

@@ -10,4 +10,11 @@ public interface Command {
 
 	}
 	String describeCommand();
+
+	default void setKey(Integer key){
+	}
+
+	default boolean needsArgument(){
+		return false;
+	}
 }

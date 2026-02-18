@@ -1,11 +1,13 @@
 package Model;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.ZonedDateTime;
 
+@ToString
 @Setter
 @Getter
 public class Ticket {
@@ -16,13 +18,7 @@ public class Ticket {
 	private long price;
 	private TicketType type;
 	private Person person;
-	public Ticket(int id,String name, Coordinates coordinates, ZonedDateTime creationDate, long price) {
-		this.id = id;
-		this.name = name;
-		this.coordinates = coordinates;
-		this.creationDate = creationDate;
-		this.price = price;
-	}
+
 	public Ticket(int id,String name, Coordinates coordinates, ZonedDateTime creationDate, long price, TicketType type, Person person) {
 		this.id = id;
 		this.name = name;

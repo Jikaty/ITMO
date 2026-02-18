@@ -1,13 +1,17 @@
 package Service;
 
 import Model.Ticket;
+import lombok.ToString;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
+
+@ToString(exclude = "initTime" )
 public class TicketManager {
-	private Map<Integer, Ticket> ticketsCollection = new Hashtable<>() ;
-	private LocalDateTime initTime = LocalDateTime.now();
+	private final Map<Integer, Ticket> ticketsCollection = new Hashtable<>() ;
+	private final LocalDateTime initTime = LocalDateTime.now();
 
 	private TicketManager(){
 
@@ -39,6 +43,10 @@ public class TicketManager {
 
 	public void ticketRegister (int key,Ticket ticket){
 		ticketsCollection.put(key,ticket);
+	}
+
+	public Map<Integer, Ticket> getTicketCollection(){
+		return ticketsCollection;
 	}
 
 

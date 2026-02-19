@@ -29,8 +29,12 @@ private static boolean stopFlag = false;
 				System.out.println("Нет такой команды");
 				continue;
 			}
+			if (!cmd.needsArgument() && commandAndKey.length >=2) {
+				System.out.println("У тебя команда из одного слова епта");
+				continue;
+			}
 			if(cmd.needsArgument() && commandAndKey.length != 2) {
-				System.out.println("Сука где второй аргумент");
+				System.out.println("Че ты пишешь, введи хелп и прочитай что че делает и как вводить");
 				continue;
 			}
 			if (commandAndKey.length == 2) {
@@ -40,9 +44,6 @@ private static boolean stopFlag = false;
 					System.out.println("Второе нихуя не число");
 					continue;
 				}
-			} else if (commandAndKey.length > 2) {
-				System.out.println("Ну у меня макс 2 значения в коммандах, так что сорри");
-				continue;
 			}
 			cmd.executeCommand();
 		}

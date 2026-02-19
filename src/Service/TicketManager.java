@@ -1,6 +1,7 @@
 package Service;
 
 import Model.Ticket;
+import Model.TicketType;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
@@ -47,6 +48,10 @@ public class TicketManager {
 
 	public Map<Integer, Ticket> getTicketCollection(){
 		return ticketsCollection;
+	}
+
+	public TicketType getTicketType(Integer key){
+		return ticketsCollection.get(key).getType();
 	}
 
 

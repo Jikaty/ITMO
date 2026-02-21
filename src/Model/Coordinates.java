@@ -1,13 +1,14 @@
 package Model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
+/**
+ * The type Coordinates.
+ */
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString(exclude = {})
 public class Coordinates {
 	private float x;

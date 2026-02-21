@@ -6,7 +6,13 @@ import Service.TicketManager;
 import java.util.*;
 
 
+/**
+ * The type Min by type command.
+ */
 public class MinByTypeCommand implements  Command{
+	/**
+	 * The Tm.
+	 */
 	TicketManager tm = TicketManager.getInstance();
 
 
@@ -30,6 +36,6 @@ public class MinByTypeCommand implements  Command{
 	}
 	@Override
 	public String describeCommand(){
-		return " - выводит любой объект из коллекции, значение поля type которого является минимальным";
+		return " - show random object from collection whose field type is minimized";
 	}
 }

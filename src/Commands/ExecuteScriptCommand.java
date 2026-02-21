@@ -1,25 +1,39 @@
 package Commands;
 
 
+import Service.CommandManager;
+import Service.ScriptAndPeapleScanner;
+
+
+/**
+ * The type Execute script command.
+ */
 public class ExecuteScriptCommand implements Command {
-	private boolean executeScript = false;
+	private final CommandManager commandManager;
 
-	public void setExecuteScript(boolean a){
-		executeScript = a;
-	}
-	public boolean getExecuteScript(){
-		return executeScript;
+	/**
+	 * Instantiates a new Execute script command.
+	 *
+	 * @param commandManager the command manager
+	 */
+	public ExecuteScriptCommand(CommandManager commandManager) {
+		this.commandManager = commandManager;
 	}
 
-	private void executeScript(){
-		this.executeScript = true;
+
+	@Override
+	public void executeCommand() {
+		ScriptAndPeapleScanner scanner = new ScriptAndPeapleScanner();
+		scanner.setScannerFlag(true);
+		scanner.scanFromFile();
 	}
+
 	@Override
 	public String getName() {
 		return "execute_script";
 	}
 	@Override
 	public String describeCommand(){
-		return " - скрипт из файла";
+		return " - script from file";
 	}
 }

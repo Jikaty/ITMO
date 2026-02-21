@@ -6,6 +6,9 @@ import Service.TicketManager;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Remove greater key command.
+ */
 public class RemoveGreaterKeyCommand implements Command {
 	private Integer key;
 	private final TicketManager tm =  TicketManager.getInstance();
@@ -25,7 +28,7 @@ public class RemoveGreaterKeyCommand implements Command {
 			}
 			System.out.println("Removed is finished");
 		} else {
-			System.out.println("Тут нихуя нет");
+			System.out.println("Collection is empty");
 		}
 	}
 
@@ -46,6 +49,6 @@ public class RemoveGreaterKeyCommand implements Command {
 
 	@Override
 	public String describeCommand(){
-		return " - удаляет из коллекции все элементы, ключ которых превышает заданный";
+		return " - delete all collection elements whose key less than specified";
 	}
 }

@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Laba5:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Laba5_jar</output-path>
+    <root id="archive" name="Laba5.jar">
+      <element id="module-output" name="Laba5" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/lombok.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/xstream-1.4.20.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jaxb-runtime-2.3.1 (1).jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/jaxb-api-2.3.1 (1).jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

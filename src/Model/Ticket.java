@@ -1,17 +1,18 @@
 package Model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.ZonedDateTime;
 
+/**
+ * The type Ticket.
+ */
 @AllArgsConstructor
 @ToString
 @Setter
 @Getter
+@NoArgsConstructor
 public class Ticket {
 	private int id;
 	private String name;
@@ -21,3 +22,4 @@ public class Ticket {
 	private TicketType type;
 	private Person person;
 }
+

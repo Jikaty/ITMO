@@ -7,6 +7,9 @@ import java.util.Comparator;
 import java.util.List;
 
 
+/**
+ * The type Print descending command.
+ */
 public class PrintDescendingCommand implements Command {
 	private final TicketManager tm = TicketManager.getInstance();
 
@@ -20,7 +23,7 @@ public class PrintDescendingCommand implements Command {
 				System.out.println(tm.getTicketCollection().get(key));
 			}
 		} else {
-			System.out.println("Тут сортировать то нехуй");
+			System.out.println("Collection haven't enough element for sort");
 		}
 	}
 
@@ -30,6 +33,6 @@ public class PrintDescendingCommand implements Command {
 	}
 	@Override
 	public String describeCommand(){
-		return " - выводит элементы коллекции в порядке убывания";
+		return " - displays the elements of the collection in descending order";
 	}
 }

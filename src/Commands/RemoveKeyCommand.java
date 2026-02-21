@@ -2,8 +2,14 @@ package Commands;
 
 import Service.TicketManager;
 
+/**
+ * The type Remove key command.
+ */
 public class RemoveKeyCommand implements Command{
 	private Integer key;
+	/**
+	 * The Tm.
+	 */
 	TicketManager tm = TicketManager.getInstance();
 
 	@Override
@@ -25,7 +31,7 @@ public class RemoveKeyCommand implements Command{
 
 	@Override
 	public String describeCommand(){
-		return " - удаляет элемент из коллекции по его ключу";
+		return " - delete collection element by key";
 	}
 
 	@Override

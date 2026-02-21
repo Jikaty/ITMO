@@ -3,8 +3,17 @@ import Service.CommandManager;
 
 import java.util.Set;
 
+/**
+ * The type Help command.
+ */
 public class HelpCommand implements Command {
 	private final CommandManager cm;
+
+	/**
+	 * Instantiates a new Help command.
+	 *
+	 * @param cm the cm
+	 */
 	public HelpCommand(CommandManager cm) {
 		this.cm = cm;
 	}
@@ -19,6 +28,6 @@ public class HelpCommand implements Command {
 	}
 	@Override
 	public String describeCommand(){
-		return " - справка по командам";
+		return " - guide for commands";
 	}
 }

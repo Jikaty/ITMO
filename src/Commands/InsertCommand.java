@@ -5,6 +5,9 @@ import Service.CreateTicket;
 import Service.TicketManager;
 
 
+/**
+ * The type Insert command.
+ */
 public class InsertCommand implements  Command{
 	private final TicketManager tm = TicketManager.getInstance();
 	private Integer key;
@@ -27,7 +30,7 @@ public class InsertCommand implements  Command{
 
 	@Override
 	public String describeCommand(){
-		return " - добавляет новый элемент с заданным ключом";
+		return " - insert new element with your key";
 	}
 
 	@Override

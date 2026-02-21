@@ -2,8 +2,14 @@ package Commands;
 
 import Service.TicketManager;
 
+/**
+ * The type Clear command.
+ */
 public class ClearCommand implements Command {
 
+	/**
+	 * The Tm.
+	 */
 	TicketManager tm = TicketManager.getInstance();
 
 	@Override
@@ -14,6 +20,6 @@ public class ClearCommand implements Command {
 
 	@Override
 	public String describeCommand(){
-		return " - очистить коллекцию";
+		return " - clear collection";
 	}
 }

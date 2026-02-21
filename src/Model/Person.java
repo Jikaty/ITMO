@@ -1,15 +1,16 @@
 package Model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Date;
 
+/**
+ * The type Person.
+ */
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString(exclude = {})
 public class Person {
 	private Date birthday;

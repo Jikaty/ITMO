@@ -4,11 +4,17 @@ package Commands;
 import Model.Ticket;
 import Service.TicketManager;
 
+/**
+ * The type Info command.
+ */
 public class InfoCommand implements Command {
+	/**
+	 * The Tm.
+	 */
 	TicketManager tm = TicketManager.getInstance();
 	@Override
 	public String describeCommand(){
-		return " - выводит информацию о коллекции";
+		return " - show collection information";
 	}
 	@Override
 	public void executeCommand(){
@@ -18,7 +24,7 @@ public class InfoCommand implements Command {
 			System.out.println(tm.getCollectionTime());
 			System.out.println(tm.getCollectionHashCode());
 		}catch(NullPointerException e){
-			System.out.println("Нет данных в коллекции");
+			System.out.println("Collection haven't data");
 		}
 	}
 }

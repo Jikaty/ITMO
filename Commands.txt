@@ -1,0 +1,25 @@
+show
+insert 123
+asdsa
+1
+1
+1
+VIP
+no
+insert 12221
+XUIasd
+12
+2
+33
+VIP
+no
+insert 1223
+SDAsdss
+444
+123
+12322
+VIP
+no
+save
+filter_greater_than_person 122
+show

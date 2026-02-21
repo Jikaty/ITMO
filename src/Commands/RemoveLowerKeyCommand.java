@@ -5,6 +5,9 @@ import Service.TicketManager;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Remove lower key command.
+ */
 public class RemoveLowerKeyCommand implements Command {
 	private Integer key;
 	private final TicketManager tm =  TicketManager.getInstance();
@@ -23,7 +26,7 @@ public class RemoveLowerKeyCommand implements Command {
 				}
 			System.out.println("Removed is finished");
 		} else {
-			System.out.println("Тут нихуя нет");
+			System.out.println("Collection is empty");
 		}
 	}
 
@@ -44,6 +47,6 @@ public class RemoveLowerKeyCommand implements Command {
 
 	@Override
 	public String describeCommand(){
-		return " - удаляет из коллекции все элементы, ключ которых меньше, чем заданный";
+		return " - delete all collection elements whose key more than specified";
 	}
 }

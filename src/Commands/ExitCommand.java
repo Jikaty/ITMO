@@ -1,21 +1,23 @@
 package Commands;
 
 import Service.ScriptAndPeapleScanner;
+import Service.TicketManager;
 
+
+/**
+ * The type Exit command.
+ */
 public class ExitCommand implements Command{
-//	@Override
-//	public void executeCommand() {
-//		System.out.println("Конец работы");
-//		System.exit(0);
-//	}
+	private TicketManager tm = TicketManager.getInstance();
 	@Override
 	public void executeCommand() {
-		System.out.println("Конец работы");
+		System.out.println("Work was finished without save");
+		tm.setSaveFlag(false);
 		ScriptAndPeapleScanner.setStopFlag(true);
 	}
 	@Override
 	public String describeCommand(){
-		return " - завершить программу без сохранения";
+		return " - finish program without save";
 	}
 
 }

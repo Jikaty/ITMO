@@ -3,6 +3,9 @@ package Commands;
 import Service.CreateTicket;
 import Service.TicketManager;
 
+/**
+ * The type Update id command.
+ */
 public class UpdateIDCommand implements Command {
 	private Integer key;
 	private final TicketManager tm  = TicketManager.getInstance();
@@ -35,6 +38,6 @@ public class UpdateIDCommand implements Command {
 
 	@Override
 	public String describeCommand(){
-		return " -  обновляет значение элемента коллекции, id которого равен заданному";
+		return " - updates the value of a collection element whose id is equal to the specified value";
 	}
 }

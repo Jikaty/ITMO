@@ -7,7 +7,7 @@ import Service.TicketManager;
 /**
  * The type Replace if lower command.
  */
-public class ReplaceIfLowerCommand implements Command {
+public class ReplaceIfLowerCommand implements Command,TypeOfArgument {
 	private Integer key;
 	private final TicketManager tm = TicketManager.getInstance();
 	private final CreateTicket createTicket = new CreateTicket();
@@ -39,6 +39,10 @@ public class ReplaceIfLowerCommand implements Command {
 	@Override
 	public String getName() {
 		return "replace_if_lowe";
+	}
+	@Override
+	public String typeOfArgument() {
+		return "Integer";
 	}
 
 	@Override

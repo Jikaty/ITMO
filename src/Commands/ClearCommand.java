@@ -6,7 +6,6 @@ import Service.TicketManager;
  * The type Clear command.
  */
 public class ClearCommand implements Command {
-
 	/**
 	 * The Tm.
 	 */

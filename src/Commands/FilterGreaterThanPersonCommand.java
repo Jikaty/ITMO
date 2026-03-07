@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * The type Filter greater than person command.
  */
-public class FilterGreaterThanPersonCommand implements Command {
+public class FilterGreaterThanPersonCommand implements Command,TypeOfArgument {
 	private Integer key;
 	private final TicketManager tm = TicketManager.getInstance();
 
@@ -27,6 +27,11 @@ public class FilterGreaterThanPersonCommand implements Command {
 	@Override
 	public boolean needsArgument(){
 		return true;
+	}
+
+	@Override
+	public String typeOfArgument() {
+		return "Integer";
 	}
 
 	@Override

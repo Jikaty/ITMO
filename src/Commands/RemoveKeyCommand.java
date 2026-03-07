@@ -5,7 +5,7 @@ import Service.TicketManager;
 /**
  * The type Remove key command.
  */
-public class RemoveKeyCommand implements Command{
+public class RemoveKeyCommand implements Command,TypeOfArgument {
 	private Integer key;
 	/**
 	 * The Tm.
@@ -32,6 +32,10 @@ public class RemoveKeyCommand implements Command{
 	@Override
 	public String describeCommand(){
 		return " - delete collection element by key";
+	}
+	@Override
+	public String typeOfArgument() {
+		return "Integer";
 	}
 
 	@Override

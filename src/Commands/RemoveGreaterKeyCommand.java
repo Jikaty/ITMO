@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * The type Remove greater key command.
  */
-public class RemoveGreaterKeyCommand implements Command {
+public class RemoveGreaterKeyCommand implements Command,TypeOfArgument {
 	private Integer key;
 	private final TicketManager tm =  TicketManager.getInstance();
 
@@ -40,6 +40,11 @@ public class RemoveGreaterKeyCommand implements Command {
 	@Override
 	public boolean needsArgument() {
 		return true;
+	}
+
+	@Override
+	public String typeOfArgument() {
+		return "Integer";
 	}
 
 	@Override

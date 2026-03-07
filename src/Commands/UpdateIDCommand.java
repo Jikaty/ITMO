@@ -6,7 +6,7 @@ import Service.TicketManager;
 /**
  * The type Update id command.
  */
-public class UpdateIDCommand implements Command {
+public class UpdateIDCommand implements Command,TypeOfArgument {
 	private Integer key;
 	private final TicketManager tm  = TicketManager.getInstance();
 	private final CreateTicket updateTicket = new CreateTicket();
@@ -29,6 +29,11 @@ public class UpdateIDCommand implements Command {
 	@Override
 	public boolean needsArgument() {
 		return true;
+	}
+
+	@Override
+	public String typeOfArgument() {
+		return "Integer";
 	}
 
 	@Override

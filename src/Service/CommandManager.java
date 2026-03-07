@@ -1,6 +1,7 @@
 package Service;
 
 import Commands.*;
+import Model.Ticket;
 
 import java.util.*;
 

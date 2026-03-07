@@ -8,7 +8,7 @@ import Service.ScriptAndPeapleScanner;
 /**
  * The type Execute script command.
  */
-public class ExecuteScriptCommand implements Command {
+public class ExecuteScriptCommand implements Command, TypeOfArgument {
 	private final CommandManager commandManager;
 
 	/**
@@ -32,6 +32,16 @@ public class ExecuteScriptCommand implements Command {
 	public String getName() {
 		return "execute_script";
 	}
+	@Override
+	public boolean needsArgument() {
+		return true;
+	}
+
+	@Override
+	public String typeOfArgument() {
+		return "String";
+	}
+
 	@Override
 	public String describeCommand(){
 		return " - script from file";

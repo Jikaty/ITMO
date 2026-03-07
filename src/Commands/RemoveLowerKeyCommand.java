@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * The type Remove lower key command.
  */
-public class RemoveLowerKeyCommand implements Command {
+public class RemoveLowerKeyCommand implements Command,TypeOfArgument {
 	private Integer key;
 	private final TicketManager tm =  TicketManager.getInstance();
 
@@ -43,6 +43,10 @@ public class RemoveLowerKeyCommand implements Command {
 	@Override
 	public String getName() {
 		return "remove_lower_key";
+	}
+	@Override
+	public String typeOfArgument() {
+		return "Integer";
 	}
 
 	@Override

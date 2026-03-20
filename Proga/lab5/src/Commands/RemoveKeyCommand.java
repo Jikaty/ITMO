@@ -1,0 +1,50 @@
+package Commands;
+
+import Service.TicketManager;
+
+/**
+ * The type Remove key command.
+ */
+public class RemoveKeyCommand implements Command,TypeOfArgument {
+	private Integer key;
+	/**
+	 * The Tm.
+	 */
+	TicketManager tm = TicketManager.getInstance();
+
+	@Override
+	public void executeCommand(){
+		if(tm.getTicketCollection().containsKey(key)){
+			tm.getTicketCollection().remove(key);
+			System.out.println("Ticket removed successfully");
+		} else {
+			System.out.println("Ticket Not Found");
+		}
+	}
+
+
+
+	@Override
+	public String getName() {
+		return "remove_key";
+	}
+
+	@Override
+	public String describeCommand(){
+		return " - delete collection element by key";
+	}
+	@Override
+	public String typeOfArgument() {
+		return "Integer";
+	}
+
+	@Override
+	public void setKey(Integer key){
+		this.key = key;
+	}
+
+	@Override
+	public boolean needsArgument(){
+		return true;
+	}
+}

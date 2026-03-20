@@ -1,0 +1,16 @@
+<hashtable>
+  <entry>
+    <int>123</int>
+    <Model.Ticket>
+      <id>1719502552</id>
+      <name>asd</name>
+      <coordinates>
+        <x>1.0</x>
+        <y>1.0</y>
+      </coordinates>
+      <creationDate>2026-03-07T15:53:30.824768+03:00[Europe/Moscow]</creationDate>
+      <price>1</price>
+      <type>VIP</type>
+    </Model.Ticket>
+  </entry>
+</hashtable>

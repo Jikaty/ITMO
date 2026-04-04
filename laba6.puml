@@ -1,0 +1,375 @@
+@startuml
+class server.Service.ArgsForCommands {
++ Ticket ticket
++ int key
++ String fileName
++ SocketChannel socketChannel
+}
+
+interface server.Commands.SaveToFile {
+~ void saveToFile(String)
+}
+
+class client.ClientConsole {
+- {static} String SERVER_HOST
+- {static} int SERVER_PORT
+- Map<String,CommandInfo> serverCommands
+- void syncCommands(SocketChannel)
++ {static} void main(String[])
++ void run()
+- void clientProcess(SocketChannel)
+- Response deserializeResponse(byte[])
+- byte[] serializeRequest(Request)
+- Response readResponse(SocketChannel)
++ void process(SocketChannel,Scanner,boolean)
+}
+
+
+class common.Response {
+- String message
+- Object data
+}
+
+class server.Commands.ReplaceIfLowerCommand {
+~ ArgsForCommands args
+- TicketManager tm
++ void setArgs(Object)
++ String executeCommand()
++ boolean needMoreThenOneArgument()
++ String typeOfSecondArgument()
++ boolean needsArgument()
++ String getName()
++ String typeOfArgument()
++ String describeCommand()
+}
+
+
+class server.Commands.HelpCommand {
+- CommandManager cm
++ String executeCommand()
++ String describeCommand()
+}
+
+
+class common.CommandInfo {
+- String name
+- boolean needArg
+- boolean needObject
++ String getName()
++ boolean needArg()
++ boolean needObject()
+}
+
+
+interface server.Commands.TypeOfSecondArgument {
+~ String typeOfSecondArgument()
+}
+
+class server.Commands.MinByTypeCommand {
+~ TicketManager tm
++ String executeCommand()
++ String getName()
++ String describeCommand()
+}
+
+
+interface server.Commands.TypeOfArgument {
+~ String typeOfArgument()
+}
+
+class server.Commands.ShowCommand {
+~ TicketManager tm
++ String executeCommand()
++ String describeCommand()
+}
+
+
+class server.Commands.ExecuteScriptCommand {
+- ArgsForCommands argsForScript
++ void setArgs(Object)
++ String executeCommand()
++ String getName()
++ boolean needsArgument()
++ String typeOfArgument()
++ String describeCommand()
+}
+
+
+class server.Commands.InfoCommand {
+~ TicketManager tm
++ String describeCommand()
++ String executeCommand()
+}
+
+
+class server.Service.CommandManager {
+- Map<String,Command> commands
++ List<String> fileNames
+- {static} CommandManager instance
++ {static} CommandManager getInstance()
+- void registerCmd(Command)
++ Command getCommand(String)
++ Set<String> getCommandKey()
++ Map<String,CommandInfo> getCommandsData()
+}
+
+
+class server.Service.TicketManager {
+- Map<Integer,Ticket> ticketsCollection
+- LocalDateTime initTime
+- {static} XStream xstream
+- boolean saveFlag
++ {static} TicketManager getInstance()
++ String getInitTime()
++ String getCollectionTime()
++ int getCollectionSize()
++ int getCollectionHashCode()
++ void ticketRegister(int,Ticket)
++ Map<Integer,Ticket> getTicketCollection()
++ TicketType getTicketType(Integer)
++ long getTicketPower(Ticket)
++ int getPersonPower(Ticket)
++ void saveToFile(String)
++ void loadFromFile(String)
+}
+
+
+class server.Service.TicketManager$TicketManagerStatic {
+- {static} TicketManager INSTANCE
+}
+
+class server.Commands.PrintDescendingCommand {
+- TicketManager tm
++ String executeCommand()
++ String getName()
++ String describeCommand()
+}
+
+
+class common.Request {
+- String commandName
+- String stringArg
+- Object objectArg
+}
+
+class server.Commands.RemoveLowerKeyCommand {
+- ArgsForCommands args
+- TicketManager tm
++ void setArgs(Object)
++ String executeCommand()
++ boolean needsArgument()
++ String getName()
++ String typeOfArgument()
++ String describeCommand()
+}
+
+
+class model.Ticket {
+- int id
+- String name
+- Coordinates coordinates
+- ZonedDateTime creationDate
+- long price
+- TicketType type
+- Person person
+}
+
+class server.Commands.ClearCommand {
+~ TicketManager tm
++ String executeCommand()
++ String describeCommand()
+}
+
+
+class server.Commands.UpdateIDCommand {
+- ArgsForCommands argsForUpdate
+- TicketManager tm
++ void setArgs(Object)
++ String executeCommand()
++ boolean needsArgument()
++ boolean needMoreThenOneArgument()
++ String typeOfArgument()
++ String typeOfSecondArgument()
++ String getName()
++ String describeCommand()
+}
+
+
+class server.Commands.RemoveKeyCommand {
+- ArgsForCommands args
+~ TicketManager tm
++ void setArgs(Object)
++ String executeCommand()
++ String getName()
++ String describeCommand()
++ String typeOfArgument()
++ boolean needsArgument()
+}
+
+
+class model.Person {
+- Date birthday
+- double height
+- int weight
+- String passportID
+}
+
+class server.Commands.InsertCommand {
+- TicketManager tm
+- ArgsForCommands argsForInsert
++ void setArgs(Object)
++ String executeCommand()
++ String describeCommand()
++ String typeOfArgument()
++ boolean needsArgument()
++ boolean needMoreThenOneArgument()
++ String typeOfSecondArgument()
+}
+
+
+class server.Commands.ExitCommand {
+~ ArgsForCommands args
++ String executeCommand()
++ String describeCommand()
++ String typeOfArgument()
+}
+
+
+enum model.TicketType {
++  VIP
++  USUAL
++  BUDGETARY
++  CHEAP
+- int ticketTypeCode
++ {static} TicketType getTicketTypeByCode(Integer)
+}
+
+
+class model.Coordinates {
+- float x
+- double y
+}
+
+class server.Server {
+- Logger logger
+- CommandManager commandManager
+- TicketManager ticketManager
+- InetAddress address
+- int PORT
+- {static} String fileName
++ {static} void main(String[])
++ void startServer()
+- void connectionAccept(ServerSocketChannel,Selector)
+- void readFromClient(SocketChannel)
+- Request deserializeRequest(byte[])
+- byte[] serializeResponse(Response)
++ void processing(Request,SocketChannel)
+- void sendResponse(SocketChannel,Response)
+- void startConsoleThread()
+}
+
+
+interface server.Commands.Command {
+~ String getName()
+~ String executeCommand()
+~ void setArgs(Object)
+~ Object getArgs()
+~ String describeCommand()
+~ boolean needsArgument()
+~ boolean needMoreThenOneArgument()
+}
+
+class server.Commands.SaveCommand {
+~ TicketManager tm
++ String executeCommand()
++ String describeCommand()
+}
+
+
+interface server.Commands.LoadFromFile {
+~ void loadFromFile(String)
+}
+
+class client.CreateTicket {
+- Scanner scanner
+- boolean isScriptMode
++ Ticket getTicket()
+- String registerTicketName()
+- float registerCoordinateX()
+- double registerCoordinateY()
+- Date registerPersonBirthday()
+- double registerPersonHeight()
+- int registerPersonWeight()
+- String registerPersonPassportID()
+- ZonedDateTime generationTicketTime()
+- long registerTicketPrice()
+- TicketType registerTicketType()
+- Person registerPerson()
+- int wrongInput(int)
+}
+
+
+class server.Commands.RemoveGreaterKeyCommand {
+- ArgsForCommands args
+- TicketManager tm
++ void setArgs(Object)
++ String executeCommand()
++ boolean needsArgument()
++ String typeOfArgument()
++ String getName()
++ String describeCommand()
+}
+
+
+class server.Commands.FilterGreaterThanPersonCommand {
+- TicketManager tm
+~ ArgsForCommands args
++ void setArgs(Object)
++ String executeCommand()
++ boolean needsArgument()
++ String typeOfArgument()
++ String getName()
++ String describeCommand()
+}
+
+
+
+
+java.io.Serializable <|.. common.Response
+server.Commands.Command <|.. server.Commands.ReplaceIfLowerCommand
+server.Commands.TypeOfArgument <|.. server.Commands.ReplaceIfLowerCommand
+server.Commands.TypeOfSecondArgument <|.. server.Commands.ReplaceIfLowerCommand
+server.Commands.Command <|.. server.Commands.HelpCommand
+java.io.Serializable <|.. common.CommandInfo
+server.Commands.Command <|.. server.Commands.MinByTypeCommand
+server.Commands.Command <|.. server.Commands.ShowCommand
+server.Commands.Command <|.. server.Commands.ExecuteScriptCommand
+server.Commands.TypeOfArgument <|.. server.Commands.ExecuteScriptCommand
+server.Commands.Command <|.. server.Commands.InfoCommand
+server.Commands.SaveToFile <|.. server.Service.TicketManager
+server.Commands.LoadFromFile <|.. server.Service.TicketManager
+server.Service.TicketManager +.. server.Service.TicketManager$TicketManagerStatic
+server.Commands.Command <|.. server.Commands.PrintDescendingCommand
+java.io.Serializable <|.. common.Request
+server.Commands.Command <|.. server.Commands.RemoveLowerKeyCommand
+server.Commands.TypeOfArgument <|.. server.Commands.RemoveLowerKeyCommand
+java.io.Serializable <|.. model.Ticket
+server.Commands.Command <|.. server.Commands.ClearCommand
+server.Commands.Command <|.. server.Commands.UpdateIDCommand
+server.Commands.TypeOfArgument <|.. server.Commands.UpdateIDCommand
+server.Commands.TypeOfSecondArgument <|.. server.Commands.UpdateIDCommand
+server.Commands.Command <|.. server.Commands.RemoveKeyCommand
+server.Commands.TypeOfArgument <|.. server.Commands.RemoveKeyCommand
+java.io.Serializable <|.. model.Person
+server.Commands.Command <|.. server.Commands.InsertCommand
+server.Commands.TypeOfArgument <|.. server.Commands.InsertCommand
+server.Commands.TypeOfSecondArgument <|.. server.Commands.InsertCommand
+server.Commands.Command <|.. server.Commands.ExitCommand
+server.Commands.TypeOfArgument <|.. server.Commands.ExitCommand
+java.io.Serializable <|.. model.Coordinates
+server.Commands.Command <|.. server.Commands.SaveCommand
+server.Commands.Command <|.. server.Commands.RemoveGreaterKeyCommand
+server.Commands.TypeOfArgument <|.. server.Commands.RemoveGreaterKeyCommand
+server.Commands.Command <|.. server.Commands.FilterGreaterThanPersonCommand
+server.Commands.TypeOfArgument <|.. server.Commands.FilterGreaterThanPersonCommand
+@enduml

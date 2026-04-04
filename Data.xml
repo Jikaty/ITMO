@@ -1,0 +1,30 @@
+<hashtable>
+  <entry>
+    <int>1231</int>
+    <model.Ticket>
+      <id>-1043839165</id>
+      <name>asd</name>
+      <coordinates>
+        <x>1.0</x>
+        <y>1.0</y>
+      </coordinates>
+      <creationDate>2026-04-04T04:08:24.216226+03:00[Europe/Moscow]</creationDate>
+      <price>11</price>
+      <type>VIP</type>
+    </model.Ticket>
+  </entry>
+  <entry>
+    <int>123</int>
+    <model.Ticket>
+      <id>-1832093851</id>
+      <name>asd</name>
+      <coordinates>
+        <x>11.0</x>
+        <y>1.0</y>
+      </coordinates>
+      <creationDate>2026-04-04T04:03:26.4509316+03:00[Europe/Moscow]</creationDate>
+      <price>1</price>
+      <type>CHEAP</type>
+    </model.Ticket>
+  </entry>
+</hashtable>

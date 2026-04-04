@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="665aee8e-90b8-4cba-8db2-1d0f0a3815a2" name="Changes" comment="+ lab6" />
+    <list default="true" id="665aee8e-90b8-4cba-8db2-1d0f0a3815a2" name="Changes" comment="+ lab6">
+      <change beforePath="$PROJECT_DIR$/Proga/lab6/Laba6.puml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +159,7 @@
       <workItem from="1774875236692" duration="11000" />
       <workItem from="1775060413414" duration="3000" />
       <workItem from="1775245165711" duration="18839000" />
-      <workItem from="1775297080695" duration="13407000" />
+      <workItem from="1775297080695" duration="13645000" />
     </task>
     <task id="LOCAL-00001" summary="+ lab5">
       <option name="closed" value="true" />
@@ -175,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775310997646</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="+ lab6">
+      <option name="closed" value="true" />
+      <created>1775311016011</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1775311016011</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

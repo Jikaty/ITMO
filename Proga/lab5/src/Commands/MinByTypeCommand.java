@@ -1,6 +1,6 @@
 package Commands;
 
-import Model.TicketType;
+import model.TicketType;
 import Service.TicketManager;
 
 import java.util.*;

@@ -1,0 +1,12 @@
+show
+insert adasd
+123
+1
+1
+1
+VIP
+no
+info
+help
+
+//execute_script 2.txt

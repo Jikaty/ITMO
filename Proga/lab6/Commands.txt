@@ -1,0 +1,10 @@
+show
+clear
+insert 123
+asd
+1
+1
+1
+VIP
+no
+show

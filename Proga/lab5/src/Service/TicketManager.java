@@ -2,9 +2,9 @@ package Service;
 
 import Commands.LoadFromFile;
 import Commands.SaveToFile;
-import Model.Person;
-import Model.Ticket;
-import Model.TicketType;
+import model.Person;
+import model.Ticket;
+import model.TicketType;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import com.thoughtworks.xstream.security.AnyTypePermission;

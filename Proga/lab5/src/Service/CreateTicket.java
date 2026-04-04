@@ -1,9 +1,9 @@
 package Service;
 
-import Model.Coordinates;
-import Model.Person;
-import Model.Ticket;
-import Model.TicketType;
+import model.Coordinates;
+import model.Person;
+import model.Ticket;
+import model.TicketType;
 import lombok.Setter;
 
 import java.text.SimpleDateFormat;

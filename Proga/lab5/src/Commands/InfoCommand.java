@@ -1,7 +1,7 @@
 package Commands;
 
 
-import Model.Ticket;
+import model.Ticket;
 import Service.TicketManager;
 
 /**

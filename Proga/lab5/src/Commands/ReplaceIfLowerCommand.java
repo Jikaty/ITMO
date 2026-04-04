@@ -1,6 +1,6 @@
 package Commands;
 
-import Model.Ticket;
+import model.Ticket;
 import Service.CreateTicket;
 import Service.TicketManager;
 

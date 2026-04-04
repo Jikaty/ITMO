@@ -1,0 +1,22 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: DockerfileServer
+    stdin_open: true
+    tty: true
+    ports:
+      - "12345:12345"
+    volumes:
+      - ./Data.xml:/app/Data.xml
+
+  client:
+    build:
+      context: .
+      dockerfile: DockerfileClient
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+    environment:
+      - SERVER_HOST=server

@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'ru.itmo'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    implementation 'com.thoughtworks.xstream:xstream:1.4.20'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+application {
+    mainClass = 'org.example.Main' // Замените на ваш полный путь (package.ClassName)
+}
+run {
+    enableAssertions = true
+    standardInput = System.in
+}
+
+task serverJar(type: Jar) {
+    archiveBaseName = 'lab6-server'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest { attributes 'Main-Class': 'server.Server' }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+task clientJar(type: Jar) {
+    archiveBaseName = 'lab6-client'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest { attributes 'Main-Class': 'client.ClientConsole' }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

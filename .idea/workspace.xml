@@ -4,238 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="665aee8e-90b8-4cba-8db2-1d0f0a3815a2" name="Changes" comment="+ normal structure">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="28800fa6-a4f4-4d36-99a3-852fa5821dff" name="Changes" comment="+ delete trash">
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/client/ClientConsole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/client/CreateTicket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/common/CommandInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/common/Request.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/common/Response.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/common/ScriptAndPeapleScanner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/model/Coordinates.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/model/Person.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/model/Ticket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/model/TicketType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/ClearCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/Command.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/ExecuteScriptCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/ExitCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/FilterGreaterThanPersonCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/HelpCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/InfoCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/InsertCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/LoadFromFile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/MinByTypeCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/PrintDescendingCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/RemoveGreaterKeyCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/RemoveKeyCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/RemoveLowerKeyCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/ReplaceIfLowerCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/SaveCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/SaveToFile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/ShowCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/TypeOfArgument.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/TypeOfSecondArgument.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Commands/UpdateIDCommand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Service/ArgsForCommands.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Service/CommandManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Service/TicketManager$TicketManagerStatic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ITMO/server/Service/TicketManager.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$/Proga/lab6">
-      <ProjectState />
-    </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$/Proga/lab6">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="lab6" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="lab6" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Dockerfile" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Jikaty&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Jikaty/ITMO.git&quot;,
-    &quot;accountId&quot;: &quot;869ff8a5-3db5-40e1-9adc-b0ee51112090&quot;
-  }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="3BD3D0LyJ5r3nWjhvN1kDW25Qkw" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ClientConsole.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
-    &quot;Application.lab6.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.Build lab6.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.lab6 [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.lab6 [:client.ClientConsole.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.lab6 [:server.Server.main()].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;laba6&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Timoxa/IdeaProjects/ITMO/Proga/lab6/src/common&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab6\src\common" />
-      <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab6" />
-      <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab5" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab6\Scripts" />
-      <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab6\DockerFiles" />
-      <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab6" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="lab6" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="lab6.main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Proga/lab6" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
-        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
-      </set>
-    </attachedChunks>
-  </component>
+}]]></component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="665aee8e-90b8-4cba-8db2-1d0f0a3815a2" name="Changes" comment="" />
-      <created>1774009690112</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1774009690112</updated>
-      <workItem from="1774009691290" duration="2713000" />
-      <workItem from="1774012604744" duration="1591000" />
-      <workItem from="1774015162163" duration="7058000" />
-      <workItem from="1774035262351" duration="16644000" />
-      <workItem from="1774080064091" duration="768000" />
-      <workItem from="1774085333763" duration="3243000" />
-      <workItem from="1774089619013" duration="3658000" />
-      <workItem from="1774093837978" duration="2447000" />
-      <workItem from="1774875236692" duration="11000" />
-      <workItem from="1775060413414" duration="3000" />
-      <workItem from="1775245165711" duration="18839000" />
-      <workItem from="1775297080695" duration="14015000" />
-      <workItem from="1776430853881" duration="2505000" />
-    </task>
-    <task id="LOCAL-00001" summary="+ lab5">
-      <option name="closed" value="true" />
-      <created>1774010062042</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1774010062042</updated>
-    </task>
-    <task id="LOCAL-00002" summary="+ lab6">
-      <option name="closed" value="true" />
-      <created>1775310997646</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1775310997646</updated>
-    </task>
-    <task id="LOCAL-00003" summary="+ lab6">
-      <option name="closed" value="true" />
-      <created>1775311016011</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1775311016011</updated>
-    </task>
-    <task id="LOCAL-00004" summary="+ updateUML">
-      <option name="closed" value="true" />
-      <created>1775316265133</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1775316265133</updated>
-    </task>
-    <task id="LOCAL-00005" summary="+ updateUML">
-      <option name="closed" value="true" />
-      <created>1775316277193</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1775316277193</updated>
-    </task>
-    <task id="LOCAL-00006" summary="+ updateUML, - Data.xml">
-      <option name="closed" value="true" />
-      <created>1775316416917</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1775316416917</updated>
-    </task>
-    <task id="LOCAL-00007" summary="+ normal structure">
-      <option name="closed" value="true" />
-      <created>1776431581230</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1776431581230</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ lab5" />
-    <MESSAGE value="+ lab6" />
-    <MESSAGE value="+ updateUML" />
-    <MESSAGE value="+ updateUML, - Data.xml" />
-    <MESSAGE value="+ normal structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ normal structure" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

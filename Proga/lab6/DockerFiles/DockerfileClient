@@ -1,4 +1,4 @@
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /lab6
-COPY build/libs/lab6-client-1.0-SNAPSHOT.jar client.jar
+COPY ../build/libs/lab6-client-1.0-SNAPSHOT.jar client.jar
 CMD ["java", "-jar","client.jar"]

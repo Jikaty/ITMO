@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="665aee8e-90b8-4cba-8db2-1d0f0a3815a2" name="Changes" comment="+ lab6">
-      <change beforePath="$PROJECT_DIR$/Proga/lab6/Laba6.puml" beforeDir="false" />
+    <list default="true" id="665aee8e-90b8-4cba-8db2-1d0f0a3815a2" name="Changes" comment="+ updateUML, - Data.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proga/lab6/1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Proga/lab6/Scripts/1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proga/lab6/2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Proga/lab6/Scripts/2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proga/lab6/Commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Proga/lab6/Scripts/Commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proga/lab6/DockerfileClient" beforeDir="false" afterPath="$PROJECT_DIR$/Proga/lab6/DockerFiles/DockerfileClient" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proga/lab6/DockerfileServer" beforeDir="false" afterPath="$PROJECT_DIR$/Proga/lab6/DockerFiles/DockerfileServer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proga/lab6/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Proga/lab6/DockerFiles/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +123,8 @@
       <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab5" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab6\Scripts" />
+      <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab6\DockerFiles" />
       <recent name="C:\Users\Timoxa\IdeaProjects\ITMO\Proga\lab6" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -159,7 +167,8 @@
       <workItem from="1774875236692" duration="11000" />
       <workItem from="1775060413414" duration="3000" />
       <workItem from="1775245165711" duration="18839000" />
-      <workItem from="1775297080695" duration="13645000" />
+      <workItem from="1775297080695" duration="14015000" />
+      <workItem from="1776430853881" duration="507000" />
     </task>
     <task id="LOCAL-00001" summary="+ lab5">
       <option name="closed" value="true" />
@@ -185,7 +194,31 @@
       <option name="project" value="LOCAL" />
       <updated>1775311016011</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="+ updateUML">
+      <option name="closed" value="true" />
+      <created>1775316265133</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775316265133</updated>
+    </task>
+    <task id="LOCAL-00005" summary="+ updateUML">
+      <option name="closed" value="true" />
+      <created>1775316277193</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1775316277193</updated>
+    </task>
+    <task id="LOCAL-00006" summary="+ updateUML, - Data.xml">
+      <option name="closed" value="true" />
+      <created>1775316416917</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1775316416917</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +227,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="+ lab5" />
     <MESSAGE value="+ lab6" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ lab6" />
+    <MESSAGE value="+ updateUML" />
+    <MESSAGE value="+ updateUML, - Data.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ updateUML, - Data.xml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

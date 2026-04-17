@@ -1,8 +1,8 @@
 services:
   server:
     build:
-      context: .
-      dockerfile: DockerfileServer
+      context: ..
+      dockerfile: ../DockerfileServer
     stdin_open: true
     tty: true
     ports:
@@ -12,8 +12,8 @@ services:
 
   client:
     build:
-      context: .
-      dockerfile: DockerfileClient
+      context: ..
+      dockerfile: ../DockerfileClient
     depends_on:
       - server
     stdin_open: true

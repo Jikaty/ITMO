@@ -1,0 +1,5 @@
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /lab6
+COPY ../build/libs/lab6-server-1.0-SNAPSHOT.jar server.jar
+COPY ../Data.xml /lab6/Data.xml
+CMD ["java", "-jar","server.jar"]

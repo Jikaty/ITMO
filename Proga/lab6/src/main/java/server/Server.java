@@ -6,7 +6,10 @@ import common.Request;
 import common.Response;
 import model.Ticket;
 
-import org.apache.logging.log4j.LogManager;import org.apache.logging.log4j.Logger;import server.Commands.Command;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import server.Commands.Command;
 import server.Commands.TypeOfArgument;
 import server.Commands.TypeOfSecondArgument;
 import server.Service.ArgsForCommands;
@@ -39,6 +42,7 @@ public class Server {
 		try {
 			InetAddress address = InetAddress.getByName("0.0.0.0");
 			Server server = new Server(address,12345);
+
 			server.startServer();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -47,6 +51,7 @@ public class Server {
 	}
 
 	public void startServer(){
+		logger.info("Попытка загрузки коллекции из файла: {}", fileName);
 		ticketManager.loadFromFile(fileName);
 		startConsoleThread();
 		try{
@@ -54,6 +59,7 @@ public class Server {
 				serverSocketChannel.configureBlocking(false);
 				var serverSocket = serverSocketChannel.socket();
 				serverSocket.bind(new InetSocketAddress(address, PORT));
+				logger.info("Сервер запущен и ожидает подключений на порту {}", PORT);
 				try (var selector = Selector.open()) {
 					serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 					while (true) {
@@ -87,8 +93,9 @@ public class Server {
 			SocketChannel client = server.accept();
 			client.configureBlocking(false);
 			client.register(selector, SelectionKey.OP_READ);
+			logger.info("Установлено новое соединение с клиентом: {}", client.getRemoteAddress());
 		} catch (IOException e) {
-			logger.error(e);
+			logger.error("Ошибка при принятии соединения: ", e);
 		}
 	}
 
@@ -108,6 +115,7 @@ public class Server {
 			}
 			lengthBuffer.flip();
 			int dataLength = lengthBuffer.getInt();
+			logger.debug("Получен заголовок: ожидаемый размер данных {} байт", dataLength);
 			ByteBuffer bodyBuf = ByteBuffer.allocate(dataLength);
 			while (bodyBuf.hasRemaining()) {
 				client.read(bodyBuf);
@@ -117,6 +125,7 @@ public class Server {
 			byte[] resBytes = new byte[bodyBuf.remaining()];
 			bodyBuf.get(resBytes);
 			Request request = deserializeRequest(resBytes);
+			logger.debug("Запрос успешно десериализован: {}", request.getCommandName());
 			processing(request,client);
 
 
@@ -141,8 +150,10 @@ public class Server {
 
 	public void processing(Request request, SocketChannel client) {
 		try {
-			if (request == null) return;
-
+			if (request == null){
+				logger.warn("Получен пустой запрос от клиента");
+				return;
+			}
 			String commandName = request.getCommandName();
 			logger.info("Command accepted: {}", commandName);
 			Response response;
@@ -174,6 +185,7 @@ public class Server {
 								cmd.setArgs(args);
 							}
 						} catch (Exception e){
+							logger.warn("Ошибка в аргументах команды {}: {}", commandName, e.getMessage());
 							response = new Response("Mistake in argue " + e.getMessage(), null);
 							sendResponse(client,response);
 							return;
@@ -194,12 +206,17 @@ public class Server {
 			}
 			sendResponse(client, response);
 		} catch (Exception e) {
-			System.out.println("Session was finished");
+			try {
+				logger.info("Сессия с клиентом {} завершена", client.getRemoteAddress());
+			} catch (IOException w) {
+				logger.info("Сессия с клиентом завершена (адрес недоступен)");
+			}
 		}
 	}
 
 	private void sendResponse(SocketChannel client, Response response) throws IOException {
 		byte[] responseBytes = serializeResponse(response);
+		logger.debug("Отправка ответа клиенту. Размер: {} байт", responseBytes.length);
 		int length = responseBytes.length;
 		ByteBuffer responseBuffer = ByteBuffer.allocate(4+length);
 		responseBuffer.putInt(length);
@@ -216,6 +233,7 @@ public class Server {
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine().trim();
 				if (line.equalsIgnoreCase("save")) {
+					logger.info("Сохранение коллекции в файл по команде из консоли");
 					ticketManager.saveToFile(fileName);
 				} else if (line.equalsIgnoreCase("exit")) {
 					logger.info("Завершение работы сервера");

@@ -1,7 +1,7 @@
 package server.Service;
 
 import common.CommandInfo;
-import server.Commands.Command;import server.Commands.*;
+import server.Commands.Command;import server.Commands.UpdateIDCommand;import server.Commands.*;
 
 import java.util.*;import java.util.stream.Collectors;
 

@@ -246,7 +246,4 @@ public class Server {
 		consoleThread.start();
 	}
 
-
-
-
 }

@@ -1,0 +1,4 @@
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
+COPY build/libs/lab6-client-1.0-SNAPSHOT.jar client.jar
+ENTRYPOINT ["java", "-jar", "client.jar"]

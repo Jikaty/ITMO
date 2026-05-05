@@ -1,0 +1,47 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: lab7_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: JonnyDoDep2007
+      POSTGRES_DB: lab7
+    ports:
+      - "5433:5432"
+    volumes:
+      - lab7_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d lab7"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  server:
+    image: eclipse-temurin:17-jre-alpine
+    container_name: lab7_server
+    volumes:
+      - ./build/libs:/app
+    working_dir: /app
+    command: java -jar lab6-server-1.0-SNAPSHOT.jar
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "12345:12345"
+    stdin_open: true
+    tty: true
+
+  client:
+    image: eclipse-temurin:17-jre-alpine
+    container_name: lab7_client
+    volumes:
+      - ./build/libs:/app
+    working_dir: /app
+    command: java -jar lab6-client-1.0-SNAPSHOT.jar
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+
+volumes:
+  lab7_postgres_data:

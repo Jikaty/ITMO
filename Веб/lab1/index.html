@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Web lab1</title>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1" >
+    <link rel = "stylesheet" href = "style.css">
+    <script src = "script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа 1</h1>
+        <p>Киселев Тимофей Васильевич | Р3212 | s504648</p>
+    </header>
+    <main>
+        <div class = "layout">
+            <section>
+                <h2>Координатная область</h2>
+                <canvas id = "canvas" width = "440" height="440" role="img"
+                        aria-label = "Область и точки с выбранным радиусом"
+                        aria-describedby="description"></canvas>
+            </section>
+            <section>
+                <form id = "form">
+                    <fieldset>
+                        <legend> Координата X</legend>
+                        <div class = "radio-buttons">
+                            <label><input name = "x" type = "radio" value="-4">-4</label>
+                            <label><input name = "x" type = "radio" value="-3">-3</label>
+                            <label><input name = "x" type = "radio" value="-2">-2</label>
+                            <label><input name = "x" type = "radio" value="-1">-1</label>
+                            <label><input name = "x" type = "radio" value="0" checked required>0</label>
+                            <label><input name = "x" type = "radio" value="1">1</label>
+                            <label><input name = "x" type = "radio" value="2">2</label>
+                            <label><input name = "x" type = "radio" value="3">3</label>
+                            <label><input name = "x" type = "radio" value="4">4</label>
+                        </div>
+                    </fieldset>
+                    <label for = "y">Координата Y (-3 &lt; Y &lt; 5)</label>
+                    <input id = "y" type = "text" name = "y" pattern = "[+\-]?[0-9]+([.,][0-9]+)?"
+                            placeholder = "-0.5" aria-describedby = "y-descr" required>
+                    <p id = "y-descr">Введите значение он -3 до 5 не включительно</p>
+                    <fieldset>
+                        <legend> Координата R</legend>
+                        <div class = "radio-buttons">
+                            <label><input name = "r" type = "radio" value="1" checked required>1</label>
+                            <label><input name = "r" type = "radio" value="1.5">1.5</label>
+                            <label><input name = "r" type = "radio" value="2">2</label>
+                            <label><input name = "r" type = "radio" value="2.5">2.5</label>
+                            <label><input name = "r" type = "radio" value="3">3</label>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+        <section>
+
+        </section>
+    </main>
+</body>
+</html>
+
+

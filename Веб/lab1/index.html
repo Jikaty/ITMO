@@ -21,6 +21,7 @@
                         aria-describedby="description"></canvas>
             </section>
             <section>
+                <h2>Проверка точ</h2>
                 <form id = "form">
                     <fieldset>
                         <legend> Координата X</legend>
@@ -50,11 +51,29 @@
                             <label><input name = "r" type = "radio" value="3">3</label>
                         </div>
                     </fieldset>
+                    <button id = "submit" type = "submit">Проверить</button>
                 </form>
+                <p id = "message" role = "status">Введите координаты и нажмите «Проверить».</p>
+                <noscript>Браузер не поддерживает JavaScript</noscript>
             </section>
         </div>
         <section>
-
+            <h2>Результат</h2>
+            <button id = "clear" type = "button">Очистить историю</button>
+            <div class = "table-result" tabindex = "0" role = "region" aria-label = "Таблица результатов">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">X</th>
+                            <th scope="col">Y</th>
+                            <th scope="col">R</th>
+                            <th scope="col">Результат</th>
+                            <th scope="col">Дата и время</th>
+                        </tr>
+                    </thead>
+                    <tbody id = "results"></tbody>
+                </table>
+            </div>
         </section>
     </main>
 </body>

@@ -1,0 +1,111 @@
+body{
+    margin:0;
+    font-family: Arial, serif;
+    color: black;
+    background: white;
+}
+* {
+    box-sizing: border-box;
+}
+header {
+    padding:20px;
+    font-family: Arial, serif;
+    font-size: 16px;
+    color: white;
+    background: #4343a5;
+}
+
+h1{
+    font-size: 24px;
+}
+h2{
+    font-size: 18px;
+}
+p{
+    line-height: 1.5;
+}
+main{
+    padding: 10px;
+    margin: 10px;
+    max-width:1000px;
+}
+
+section{
+    padding:20px;
+    margin-bottom:20px;
+    border: 1px solid #232222;
+    background: white;
+}
+
+.layout{
+    display:flex;
+    gap:20px;
+}
+.layout > section {
+    flex:1;
+    min-width:0;
+}
+canvas{
+    display:block;
+    width: 100%;
+    max-width:440px;
+    height: auto;
+    border: 1px solid white;
+}
+section p{
+    font-size: 14px;
+}
+fieldset{
+    padding:15px;
+    margin:0;
+    border:1px solid #232222;
+}
+.radio-buttons{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.radio-buttons label{
+    display: flex;
+    align-items:center;
+    min-width: 46px;
+}
+legend{
+    padding: 10px;
+    font-weight: bold;
+}
+input{
+    font: inherit;
+}
+input[type="radio"]{
+    margin: 0 8px 0 0;
+    padding: 0;
+}
+input[type="text"]{
+    display:block;
+    width: 100%;
+    margin: 3% 0;
+    padding: 3%;
+    border: 1px solid #232222;
+}
+input[type="text"]:invalid:not(:placeholder-shown) {
+    border-color: #b3261e;
+}
+input[type="text"]:invalid:not(:placeholder-shown):focus {
+    outline: 2px solid #b3261e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

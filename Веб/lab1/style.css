@@ -53,7 +53,7 @@ canvas{
     border: 1px solid white;
 }
 section p{
-    font-size: 14px;
+    font-size: 15px;
 }
 fieldset{
     padding:15px;
@@ -94,10 +94,58 @@ input[type="text"]:invalid:not(:placeholder-shown) {
 input[type="text"]:invalid:not(:placeholder-shown):focus {
     outline: 2px solid #b3261e;
 }
-
-
-
-
+button{
+    padding:10px 16px;
+    margin:10px 0 10px 0;
+    color: black;
+    background: #eee;
+    border: 1px black solid;
+    font: inherit;
+}
+button[type = "submit"]{
+    color:white;
+    background: #4343a5;
+}
+button:hover{
+    opacity:0.8;
+}
+#message{
+    margin:0;
+    font-weight:bold;
+}
+#y-descr{
+    margin:10px 0 10px 0;
+}
+label[for="y"]{
+    display:block;
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.table-result{
+    overflow-x:auto;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+th, td {
+    border: 1px solid #bbb;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+}
+th {
+    background: #e9eff5;
+}
+caption {
+    padding: 10px;
+}
+@media (max-width: 700px) {
+    .layout {
+        flex-direction: column;
+    }
+}
 
 
 

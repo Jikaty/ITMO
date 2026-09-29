@@ -16,7 +16,7 @@ function validNumber(x,y,r){
     if(Number.isInteger(x) === false || x < -4 || x > 4){
         return false;
     }
-    if(Number.isFinite(y) || y <= -3 || y>= 5){
+    if(!Number.isFinite(y) || y <= -3 || y>= 5){
         return false;
     }
     const validR = [1,1.5,2,2.5,3];
@@ -38,6 +38,7 @@ function checkY(){
     } else{
         yInput.setCustomValidity('Введите число строго между -3 и 5, например -0.5.');
     }
+    return valid;
 }
 
 function isHit(x,y,r){
@@ -56,7 +57,7 @@ function py(y){
     return 220-y*40;
 }
 
-// const point = { x: x, y: y, r: r, hit: isHit(x, y, r), timestamp: Date.now() };
+
 
 function draw(){
     const r = Number(form.elements.r.value);
@@ -96,7 +97,7 @@ function draw(){
     ctx.stroke();
 
     ctx.fillStyle = '#000000';
-    ctx.font = 'Arial 14px';
+    ctx.font = '14px Arial';
     ctx.fillText('X',410,235);
     ctx.fillText('Y',227,30);
 
@@ -138,11 +139,96 @@ function showTable(){
         row.insertCell().textContent = point.y;
         row.insertCell().textContent = point.r;
         row.insertCell().textContent = point.hit ? 'Попадание' : 'Промах';
-        const time = new Date(point.timestamp).toISOString();
+        const time = document.createElement('time');
+        time.dateTime = new Date(point.timestamp).toISOString();
         row.insertCell().append(time);
     }
     updateDate();
 }
+
+async function submit(event){
+    event.preventDefault();
+    if(submitButton.disabled) return;
+    if(!checkY()){
+        form.reportValidity();
+        return;
+    }
+    const x = Number(form.elements.x.value);
+    const y = Number(yInput.value.replace(',','.'));
+    const r = Number(form.elements.r.value);
+    if(!validNumber(x,y,r) || form.elements.x.value === ''){
+        message.textContent = 'Check x,y,r values';
+        return ;
+    }
+
+    const point = { x: x, y: y, r: r, hit: isHit(x, y, r), timestamp: Date.now() };
+    submitButton.disabled = true;
+    clearButton.disabled = true;
+
+    try{
+        // const response = await fetch('/api/validate',{
+        //     method: 'POST',
+        //     headers:{'Content-Type':'application/json'},
+        //     body:JSON.stringify({x:x,y:y,r:r}),
+        //         signal: AbortSignal.timeout(8000)
+        // });
+        // if(!response.ok) throw new Error('Сервер отклонил координаты.');
+        points.push(point);
+        showTable();
+        draw();
+        message.textContent = point.hit ? 'Точка попала в область.' : 'Точка не попала в область.';
+        try{
+            localStorage.setItem(storageKey, JSON.stringify(points));
+        } catch{
+            message.textContent='Не удалось сохранить';
+        }
+    }catch{
+        message.textContent='Не удалось выполнить проверку';
+    } finally{
+        submitButton.disabled = false;
+        clearButton.disabled = false;
+    }
+}
+
+function clear(){
+    if(!confirm('Очистить историю?')) return;
+    try{
+        localStorage.removeItem(storageKey);
+        points = [];
+        submitButton.disabled = false;
+        showTable();
+        draw();
+        message.textContent = 'История очищена';
+    } catch{
+        message.textContent = 'Браузер не разрешил очистить историю';
+    }
+}
+
+function loadHistory(){
+    try{
+        const history = JSON.parse(localStorage.getItem(storageKey)||'[]');
+        if(!Array.isArray(history)) throw new Error('Неверная история');
+        for(const point of history){
+            if(!point || !validNumber(point.x,point.y,point.r) ||
+                !Number.isSafeInteger(point.timestamp) ||
+                point.timestamp < 0 ||
+                !Number.isFinite(new Date(point.timestamp).getTime())){
+                throw new Error('Неверная запись');
+            }
+            point.hit = isHit(point.x,point.y,point.r);
+        }
+        points = history;
+    }catch{
+        message.textContent = 'История сломана';
+        submitButton.disabled = true;
+    }
+}
+
+
+
+
+clearButton.addEventListener('click',clear);
+form.addEventListener('submit',submit);
 yInput.addEventListener('input', checkY);
 form.addEventListener('change', draw);
 
@@ -150,10 +236,12 @@ form.addEventListener('change', draw);
 
 
 
+
+loadHistory();
 showTable();
 draw();
-
-
+setInterval(updateDate, 1000);
+window.addEventListener('focus', updateDate);
 
 
 

@@ -47,12 +47,16 @@ function isHit(x,y,r){
     return rectangle || circle || triangle;
 }
 
+
+
 function px(x){
     return 220+x*40;
 }
 function py(y){
     return 220-y*40;
 }
+
+// const point = { x: x, y: y, r: r, hit: isHit(x, y, r), timestamp: Date.now() };
 
 function draw(){
     const r = Number(form.elements.r.value);
@@ -91,9 +95,63 @@ function draw(){
     ctx.lineTo(225, 25);
     ctx.stroke();
 
+    ctx.fillStyle = '#000000';
+    ctx.font = 'Arial 14px';
+    ctx.fillText('X',410,235);
+    ctx.fillText('Y',227,30);
+
+    const values = [r,r/2,-r,-r/2];
+    const labels = ['R','R/2','-R','-R/2'];
+    for(let i = 0;i<values.length;i++){
+        ctx.beginPath();
+        ctx.moveTo(px(values[i]), 217);
+        ctx.lineTo(px(values[i]), 223);
+
+        ctx.moveTo(217, py(values[i]));
+        ctx.lineTo(223, py(values[i]));
+
+        ctx.stroke();
+        ctx.fillText(labels[i], px(values[i]) - 10, 210);
+        ctx.fillText(labels[i], 230, py(values[i]) + 2);
+    }
+    for(const point of points){
+        if(point.r === r){
+            ctx.fillStyle = point.hit ? 'green' : 'red';
+            ctx.beginPath();
+            ctx.arc(px(point.x),py(point.y),4,0,2*Math.PI);
+            ctx.fill();
+        }
+    }
 }
 
-draw()
+function updateDate(){
+    for(const time of document.querySelectorAll('time')){
+        time.textContent = new Date(time.dateTime).toLocaleString('ru-Ru');
+    }
+}
+
+function showTable(){
+    table.textContent = '';
+    for(const point of points){
+        const row = table.insertRow();
+        row.insertCell().textContent = point.x;
+        row.insertCell().textContent = point.y;
+        row.insertCell().textContent = point.r;
+        row.insertCell().textContent = point.hit ? 'Попадание' : 'Промах';
+        const time = new Date(point.timestamp).toISOString();
+        row.insertCell().append(time);
+    }
+    updateDate();
+}
+yInput.addEventListener('input', checkY);
+form.addEventListener('change', draw);
+
+
+
+
+
+showTable();
+draw();
 
 
 

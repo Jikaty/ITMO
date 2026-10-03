@@ -36,7 +36,7 @@ function checkY(){
     if(valid){
         yInput.setCustomValidity('');
     } else{
-        yInput.setCustomValidity('Введите число строго между -3 и 5, например -0.5.');
+        yInput.setCustomValidity('Введите число строго между -3 и 5');
     }
     return valid;
 }
@@ -116,13 +116,16 @@ function draw(){
         ctx.fillText(labels[i], 230, py(values[i]) + 2);
     }
     for(const point of points){
-        if(point.r === r){
-            ctx.fillStyle = point.hit ? 'green' : 'red';
-            ctx.beginPath();
-            ctx.arc(px(point.x),py(point.y),4,0,2*Math.PI);
-            ctx.fill();
-        }
+        const hit = isHit(point.x,point.y,point.r);
+        ctx.fillStyle = hit ? point.color : point.color;
+        ctx.beginPath();
+        ctx.arc(px(point.x),py(point.y),4,0,2*Math.PI);
+        ctx.fill();
     }
+}
+
+function getRandom(max){
+    return Math.floor(Math.random() * max)
 }
 
 function updateDate(){
@@ -145,8 +148,8 @@ function showTable(){
     }
     updateDate();
 }
-
-async function submit(event){
+let interval = 1000;
+function submit(event){
     event.preventDefault();
     if(submitButton.disabled) return;
     if(!checkY()){
@@ -161,7 +164,8 @@ async function submit(event){
         return ;
     }
 
-    const point = { x: x, y: y, r: r, hit: isHit(x, y, r), timestamp: Date.now() };
+    const point = { x: x, y: y, r: r, hit: isHit(x, y, r), timestamp: Date.now(),
+        color:`rgb(${getRandom(255)} ${getRandom(255)} ${getRandom(255)})`};
     submitButton.disabled = true;
     clearButton.disabled = true;
 
@@ -175,7 +179,8 @@ async function submit(event){
         // if(!response.ok) throw new Error('Сервер отклонил координаты.');
         points.push(point);
         showTable();
-        draw();
+        setInterval(draw,interval);
+        interval = interval + 1000;
         message.textContent = point.hit ? 'Точка попала в область.' : 'Точка не попала в область.';
         try{
             localStorage.setItem(storageKey, JSON.stringify(points));

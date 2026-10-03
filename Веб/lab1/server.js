@@ -63,8 +63,8 @@ async function handleRequest(request,response){
 }
 const server = createServer(handleRequest);
 
-function ls(){
+function startServerMessage(){
     console.log('Откройте http://localhost:' + (process.env.PORT || 8080));
 }
 
-server.listen(Number(process.env.PORT || 8080), process.env.HOST || '127.0.0.1',ls)
+server.listen(Number(process.env.PORT || 8080), process.env.HOST || '127.0.0.1',startServerMessage)

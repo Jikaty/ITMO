@@ -1,12 +1,4 @@
-FROM node:24-alpine
+FROM nginx:alpine
 
-WORKDIR /app
+COPY client /usr/share/nginx/html/
 
-COPY package.json server.js ./
-COPY client ./client
-
-ENV HOST=0.0.0.0
-ENV PORT=8080
-
-EXPOSE 8080
-CMD ["node", "server.js"]

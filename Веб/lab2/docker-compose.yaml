@@ -1,0 +1,16 @@
+services:
+  app:
+    image: gradle:jdk17
+    working_dir: /project
+    volumes:
+      - .:/project
+    command: ["sh", "-c", "gradle jar --no-daemon -q && java -DFCGI_PORT=9000 -jar build/libs/server.jar"]
+  web:
+    image: httpd:2.4
+    ports:
+      - "8080:80"
+    volumes:
+      - ./client:/usr/local/apache2/htdocs
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
+    depends_on:
+      - app

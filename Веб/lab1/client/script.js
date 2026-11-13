@@ -8,7 +8,7 @@ const clearButton = document.getElementById('clear');
 const table = document.getElementById('results');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d')
-const storageKey = 'point-area-lab1.history.v1';
+const endpoint = 'fcgi-bin/app'
 let points = [];
 
 
@@ -41,12 +41,12 @@ function checkY(){
     return valid;
 }
 
-function isHit(x,y,r){
-    const rectangle = x>=-r && x<=0 && y>=0 && y<=r;
-    const circle = x <= 0 && y<= 0 && x*x + y*y <=r*r;
-    const triangle = x >= 0 && y>= 0 && x + y <= r/2;
-    return rectangle || circle || triangle;
-}
+// function isHit(x,y,r){
+//     const rectangle = x>=-r && x<=0 && y>=0 && y<=r;
+//     const circle = x <= 0 && y<= 0 && x*x + y*y <=r*r;
+//     const triangle = x >= 0 && y>= 0 && x + y <= r/2;
+//     return rectangle || circle || triangle;
+// }
 
 
 
@@ -65,6 +65,7 @@ function draw(){
     ctx.clearRect(0,0,440,440)
     ctx.fillStyle = '#3399ff';
     ctx.fillRect(px(-r),py(r),r*40,r*40)
+
 
     ctx.beginPath();
     ctx.moveTo(px(0),py(0));
@@ -117,7 +118,7 @@ function draw(){
     }
     for(const point of points){
         const hit = isHit(point.x,point.y,point.r);
-        ctx.fillStyle = hit ? point.color : point.color;
+        ctx.fillStyle = hit ? 'green' : 'red';
         ctx.beginPath();
         ctx.arc(px(point.x),py(point.y),4,0,2*Math.PI);
         ctx.fill();
@@ -145,10 +146,11 @@ function showTable(){
         const time = document.createElement('time');
         time.dateTime = new Date(point.timestamp).toISOString();
         row.insertCell().append(time);
+        row.insertCell().append(point.workTime);
     }
     updateDate();
 }
-let interval = 1000;
+
 function submit(event){
     event.preventDefault();
     if(submitButton.disabled) return;
@@ -179,8 +181,8 @@ function submit(event){
         // if(!response.ok) throw new Error('Сервер отклонил координаты.');
         points.push(point);
         showTable();
-        setInterval(draw,interval);
-        interval = interval + 1000;
+        draw();
+
         message.textContent = point.hit ? 'Точка попала в область.' : 'Точка не попала в область.';
         try{
             localStorage.setItem(storageKey, JSON.stringify(points));
